@@ -144,6 +144,7 @@ void CREADDlg::OnSysCommand(UINT nID, LPARAM lParam)
 {
 	if ((nID & 0xFFF0) == IDM_ABOUTBOX)
 	{
+		//这是我的第二个更改
 		CAboutDlg dlgAbout;
 		dlgAbout.DoModal();
 	}
