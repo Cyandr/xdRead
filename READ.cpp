@@ -11,7 +11,7 @@
 #endif
 
 
-// CREADApp  啦啦啦啦
+// CREADApp  第三次更改
 
 BEGIN_MESSAGE_MAP(CREADApp, CWinApp)
 	ON_COMMAND(ID_HELP, &CWinApp::OnHelp)

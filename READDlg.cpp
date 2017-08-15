@@ -201,16 +201,17 @@ void CREADDlg::OnBnClickedDrawbutton()
 	ScreenToClient(&prect);	//映射到客户区坐标
 
 	CDC *pdc= picture->GetDC();	//拿到该空间的DC	
-	CBrush brush(RGB(255,0,0));// 建一个画刷
+	CBrush brush(RGB(150,150,150));// 建一个画刷
 	pdc->SelectObject(&brush);//绑定该画刷
 	pdc->MoveTo(CPoint(0, 0));//移动到原点  开始绘图
 	pdc->Rectangle(0, 0, prect.Width(), prect.Height());
 
-	for (int i = 0; i <= prect.Width(); i+=10)
+	for (double i = 0; i <= m_Values.size()-1; i++)
 	{
-		int y = prect.Height()*0.5* sin(10*i)+0.5* prect.Height();
-		
-		pdc->LineTo(CPoint(i, y));
+		//int y = prect.Height()*0.5* sin(10*i)+0.5* prect.Height();//画正弦波
+		double y;
+		y =0.5* prect.Height()+ m_Values[i]*50;
+		pdc->LineTo(CPoint(0.05*i,y));
 	}
 	
 	
