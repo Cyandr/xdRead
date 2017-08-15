@@ -11,7 +11,7 @@
 #endif
 
 
-// CREADApp
+// CREADApp  율율율율
 
 BEGIN_MESSAGE_MAP(CREADApp, CWinApp)
 	ON_COMMAND(ID_HELP, &CWinApp::OnHelp)
