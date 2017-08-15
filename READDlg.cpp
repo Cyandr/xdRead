@@ -107,6 +107,7 @@ END_MESSAGE_MAP()
 
 BOOL CREADDlg::OnInitDialog()
 {
+	///这是我的更改
 	CDialogEx::OnInitDialog();
 
 	// 将“关于...”菜单项添加到系统菜单中。
