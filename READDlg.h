@@ -54,4 +54,5 @@ public:
 	afx_msg void OnBnClickedCalculatebutton();
 	afx_msg void OnEnChangeEdit5();
 	afx_msg void OnStnClickedPicturestatic();
+	afx_msg void OnBnClickedSaveButton();
 };

@@ -100,6 +100,7 @@ BEGIN_MESSAGE_MAP(CREADDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_CalculateBUTTON, &CREADDlg::OnBnClickedCalculatebutton)
 	ON_EN_CHANGE(IDC_EDIT5, &CREADDlg::OnEnChangeEdit5)
 	ON_STN_CLICKED(IDC_PictureSTATIC, &CREADDlg::OnStnClickedPicturestatic)
+	ON_BN_CLICKED(IDC_Save_BUTTON, &CREADDlg::OnBnClickedSaveButton)
 END_MESSAGE_MAP()
 
 
@@ -358,4 +359,10 @@ void CREADDlg::OnEnChangeEdit5()
 void CREADDlg::OnStnClickedPicturestatic()
 {
 	// TODO: 在此添加控件通知处理程序代码（画图）
+}
+
+
+void CREADDlg::OnBnClickedSaveButton()
+{
+	// TODO: 在此添加控件通知处理程序代码
 }
