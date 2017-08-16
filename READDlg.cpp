@@ -10,9 +10,12 @@
 #include "string.h"
 #include <stdlib.h>  
 #include <stdio.h>  
+#include <fstream>
+using namespace std;
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
+#include "json\json.h"
 
 
 // 用于应用程序“关于”菜单项的 CAboutDlg 对话框
@@ -161,6 +164,7 @@ void CREADDlg::OnSysCommand(UINT nID, LPARAM lParam)
 
 void CREADDlg::OnPaint()
 {
+	
 	if (IsIconic())
 	{
 		CPaintDC dc(this); // 用于绘制的设备上下文
@@ -182,6 +186,7 @@ void CREADDlg::OnPaint()
 	{
 		CDialogEx::OnPaint();
 	}
+	storeFile();
 }
 
 //当用户拖动最小化窗口时系统调用此函数取得光标
@@ -358,4 +363,33 @@ void CREADDlg::OnEnChangeEdit5()
 void CREADDlg::OnStnClickedPicturestatic()
 {
 	// TODO: 在此添加控件通知处理程序代码（画图）
+}
+
+void CREADDlg::storeFile()
+{
+	Json::Value root;
+	Json::Value name;
+	Json::Value array;
+	CString snm(_T("故事是这么说的"));
+	name["name"] = Json::Value(snm);
+	name["sex"] = Json::Value(_T("男"));
+	root["value"] = Json::Value(25);
+	
+
+	for (int  i = 0; i < 100; i++)
+	{
+		array["num"].append(Json::Value(i));
+	}
+	root["new"].append(name);
+	root["new"].append(array);
+
+	string out = root.toStyledString();
+	Json::FastWriter writer;
+	std::string strWrite = writer.write(root);
+	ofstream ofs;
+	ofs.open("sd.json");
+	
+	ofs << strWrite;
+	
+	ofs.close();
 }
